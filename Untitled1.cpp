@@ -9,7 +9,6 @@ void directory();
 void change_dir();
 
 int main() {
-	
 	int choice;
 	
 	cout << "      Main Menu     " << endl;
@@ -31,8 +30,10 @@ int main() {
 		case 3:
 			change_dir();
 			break;
+		case 4:
+			return 0;
 		deafault:
-			break;
+			cout << "Invalid choice try again.\n";
 			
 	}
 	
@@ -51,10 +52,26 @@ void list_file() {
 	
 	switch (choice) {
 		case 1:
-			cout <<"List of All Files";
-			
-	    case 2:
-	    	cout <<"ada";
+			cout <<"List of All (*.*) Files\n";
+			system("dir");
+			break;
+	    case 2: {
+			break;
+	    	string ext;
+	    	cout << "Enter file extension: "
+	    	cin>> ext;
+	    	system(("dir *." + ext) .c_str());
+	    	break;
+		}
+		case 3: {
+			string pattern;
+			cout << "Enter file name pattern: ";
+			cint >> pattern;
+			system(("dir" + pattern) .c_str());
+			break;
+		}
+		default:
+			cout <<"Invalid choice try again.\n"
 			
 	}
 }
