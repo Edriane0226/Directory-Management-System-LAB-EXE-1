@@ -89,7 +89,7 @@ void directory() {
 	cin >> newDirectName;
 	
 	if(_mkdir(newDirectName.c_str()) == 0) {
-		cout << newDirectName << "Directory Successfully Created";
+		cout << newDirectName << " Directory Successfully Created";
 	}else {
 		cout << "There is an error creating new directory.";
 	}
